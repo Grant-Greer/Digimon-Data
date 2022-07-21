@@ -1,42 +1,23 @@
 import React from 'react'
-import {useState, useEffect} from 'react'
-import axios from 'axios';
+import './digimon-container.css';
 import { DigimonCard } from './DigimonCard'
 
-export default function DigimonContainer () {
-  
-  const [digimonData, setDigimonData] = useState([]);
-  
-
-    useEffect(() => {
-      const getDigimonData = async () => {
-        
-        try {
-          const response = await axios.get(
-            `https://digimon-api.herokuapp.com/api/digimon`
-          );
-          setDigimonData(response.digimonData);
-        } catch (error) {
-          console.log(error);
-        }
-      };
-
-      getDigimonData();
-    }, []);
+export default function DigimonContainer ({ digimondata }) {
     
-    console.log(digimonData)
-  return (
-    <div>  { digimonData && digimonData.length ? 
-      digimonData.map((Digimon, index) => ( 
-      <DigimonCard 
-      key={index}
-      name={Digimon.img}
-      img={Digimon.name}
-      level={Digimon.level}
-       /> 
-       )) : <h1>Loading...</h1>  
-      }
-       
+    return (
+      
+    <div className='digimon-container'> 
+      { digimondata.map((digimon, index) => {
+        return ( 
+        <DigimonCard 
+        key={index}
+        name={digimon.name}
+        img={digimon.img}
+        level={digimon.level}
+        />
+       )})}
        </div>
+      
+        
   )
 }
