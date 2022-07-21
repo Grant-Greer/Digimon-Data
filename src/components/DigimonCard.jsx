@@ -1,6 +1,9 @@
 import React from 'react';
 import './digimon-card.css';
-export const DigimonCard = ({ name, img, level }) => {
+
+export default function DigimonCard ({ name, img, level }) {
+       
+
        return (
        <div className='digimon-card'>
        <img alt={name} src={img} />

@@ -23,12 +23,21 @@
     border-radius: 1rem;
 }
 
-
-.digimon-card span {
-    font-size: 1.2rem;
+.digimon-card h1 {
+    font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 1rem;
 }
 
+.digimon-card span {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.card--hidden {
+    opacity: 0;
+    transform: translateX(-100%);
+}
 
 
