@@ -4,6 +4,7 @@ import axios from 'axios';
 import logo from './digimon-logo.jpeg';
 import './App.css';
 import DigimonContainer from './components/DigimonContainer';
+import DigimonCard from './components/DigimonCard';
 
 function App() {
 
@@ -17,7 +18,6 @@ function App() {
       try {
         const response = await axios.get(
           `https://digimon-api.herokuapp.com/api/digimon`
-         
         );
         setData(response.data);
         
@@ -32,14 +32,26 @@ function App() {
 
   return (
     <div className="App">
+     
       <header className="App-header">
         <img src={logo} className="App-logo" alt="Digimon Logo" />
       </header>
       <div className="App-body">
-         
-        <DigimonContainer digimondata={currentData}/> 
+        <DigimonContainer>
+        
+        { currentData.map( (digimon, index) => {
+        return ( 
+        <DigimonCard 
+        key={index}
+        {...digimon}
+        />
+       )
+        })}
+        
 
+        </DigimonContainer>
     </div>
+    
     </div>
 
   );
