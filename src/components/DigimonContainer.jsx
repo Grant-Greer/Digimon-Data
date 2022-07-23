@@ -1,5 +1,5 @@
 import React from 'react'
-import './digimon-container.css';
+import './styles/digimon-container.css'
 
 export default function DigimonContainer ({ children }) {
     

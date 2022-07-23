@@ -1,5 +1,5 @@
 import React from 'react';
-import './digimon-card.css';
+import './styles/digimon-card.css';
 
 export default function DigimonCard ({ name, img, level }) {
        
