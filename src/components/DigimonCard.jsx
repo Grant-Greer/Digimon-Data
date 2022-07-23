@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './styles/digimon-card.css';
 
 export default function DigimonCard({ name, img, level }) {
@@ -10,3 +11,9 @@ export default function DigimonCard({ name, img, level }) {
     </div>
   );
 }
+
+DigimonCard.propTypes = {
+  name: PropTypes.string.isRequired,
+  img: PropTypes.string.isRequired,
+  level: PropTypes.number.isRequired
+};
