@@ -34,7 +34,32 @@
   margin-bottom: 1rem;
 }
 
-.card--hidden {
+.digimon-card .fade-in {
   opacity: 0;
-  transform: translateX(-100%);
+  transform: translateY(-1rem);
 }
+
+
+
+
+
+@media screen and (min-width: 600px) {
+  .digimon-card {
+    width: 28%;
+    height: 100%;
+  }
+
+  .digimon-card img {
+    width: 70%;
+    height: 100%;
+  }
+
+  .digimon-card h1 {
+    font-size: 1.8rem;
+  }
+
+  .digimon-card span {
+    font-size: 1.2rem;
+  }
+}
+
